@@ -45,10 +45,10 @@ import java.util.Scanner;
  *
  */
 public class Staircase {
+    @SuppressWarnings("resource")
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        String result = "";
         int height = in.nextInt();
         // int height = 5;
         for (int i = 0; i < height; i++) {

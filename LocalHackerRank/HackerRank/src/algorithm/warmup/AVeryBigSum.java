@@ -41,20 +41,19 @@ import java.util.Scanner;
  * to store such sums.
  *
  */
-public class AVeruBigSum {
+public class AVeryBigSum {
 
+    @SuppressWarnings("resource")
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int size = in.nextInt();
-        // nextInt will not return, you need to make a nextLine to return  
-        in.nextLine();
-        String userInput = in.nextLine();
-        String[] values = userInput.split(" ");
-        long sum = 0;
-        for (String value : values) {
-            sum += Long.parseLong(value);
-        }
 
+        // nextInt will not return, you need to make a nextLine to return
+        in.nextLine();
+
+        long sum = 0;
+        for (int i = 0; i < size; i++)
+            sum += in.nextLong();
         System.out.println(sum);
 
     }
