@@ -63,31 +63,19 @@ public class MiniMaxSum {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        long a = in.nextLong();
-        long max = a;
-        long min = a;
-        long b = in.nextLong();
-        if (b > max)
-            max = b;
-        if (b <= min)
-            min = b;
-        long c = in.nextLong();
-        if (c > max)
-            max = c;
-        if (c <= min)
-            min = c;
-        long d = in.nextLong();
-        if (d > max)
-            max = d;
-        if (d <= min)
-            min = d;
-        long e = in.nextLong();
-        if (e > max)
-            max = e;
-        if (e <= min)
-            min = e;
+        long sum = 0;
+        long max = Long.MIN_VALUE;
+        long min = Long.MAX_VALUE;
 
-        long sum = a + b + c + d + e;
+        for (int i = 0; i < 5; i++) {
+            long input = in.nextLong();
+            sum += input;
+            if (max <= input)
+                max = input;
+            if (min >= input)
+                min = input;
+        }
+
         System.out.println((sum - max) + " " + (sum - min));
 
     }
