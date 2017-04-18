@@ -1,5 +1,9 @@
 package algorithm.dynamic_programing;
 
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Scanner;
+
 /**
  * How many different ways can you make change for an amount, given a list of
  * coins? In this problem, your code will need to efficiently compute the
@@ -93,10 +97,46 @@ package algorithm.dynamic_programing;
  */
 public class TheCoinChangeProblem {
 
-    public static void main(String[] args) {
-        /*
-         * Enter your code here. Read input from STDIN. Print output to STDOUT.
-         * Your class should be named Solution.
-         */
+    private static int amount = 0;
+    private static int combo = 0;
+
+    public static void main(String[] args) throws IOException {
+        Scanner in = new Scanner(System.in);
+        amount = in.nextInt();
+        int size = in.nextInt();
+
+        Integer[] arr = new Integer[size];
+        for (int i = 0; i < size; i++)
+            arr[i] = in.nextInt();
+
+        // Comparator<Integer> comp = Collections.reverseOrder();
+        Arrays.sort(arr);
+
+        findCombo2(arr[0], 0, arr);
+        System.out.println(combo);
     }
+
+    public static void findCombo2(int v, int current, Integer[] arr) {
+
+        for (int i = 0; i < arr.length; i++) {
+            int temp = current;
+            if (arr[i] < v)
+                continue;
+//            System.out.print(temp + "+" + arr[i] + "=");
+            temp += arr[i];
+//            System.out.print(temp + "\n");
+            if (temp < amount)
+                findCombo2(arr[i], temp, arr);
+            else {
+                if (temp == amount) {
+//                    System.out.println("count");
+                    combo++;
+                }
+                return;
+            }
+
+        }
+
+    }
+
 }
