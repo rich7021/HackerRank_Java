@@ -40,7 +40,7 @@ import java.util.Scanner;
  * =====Sample Input=====
  * 
  * 5 6 7
- * * 3 6 10
+ * 3 6 10
  * 
  * =====Sample Output=====
  * 

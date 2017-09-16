@@ -38,7 +38,7 @@ import java.util.Scanner;
  * 
  * The secondary diagonal is:
  *            4
- *      55
+ *      5
  * 10
  * Sum across the secondary diagonal: 4 + 5 + 10 = 19
  * Difference: |4 - 19| = 15

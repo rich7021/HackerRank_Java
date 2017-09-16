@@ -2,6 +2,17 @@ package algorithm.warmup;
 
 import java.util.Scanner;
 
+/**
+ * this is the easy summation program, mainly to practice the input interface
+ *
+ * ===== sample input =====
+ *  4
+ *  3
+ *
+ *  ===== sample output =====
+ *  7
+ */
+
 public class SolveMeFirst {
 	static int solveMeFirst(int a, int b) {
 		// Hint: Type return a+b; below
